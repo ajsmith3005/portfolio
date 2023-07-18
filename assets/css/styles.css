@@ -1,0 +1,35 @@
+html {
+  background-color: black;
+  font-family: HelveticaMontserrat Alternates, sans-serif;
+  color: seashell;
+}
+
+.logo {
+  height: 60px;
+  margin-left: 25px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav__link__cluster {
+  display: flex;
+  gap: 15px;
+  margin-right: 25px;
+}
+
+.nav__link img {
+  height: 35px;
+}
+
+main div::before{
+  content: url('assets\images\vertical-accent.svg')
+}
