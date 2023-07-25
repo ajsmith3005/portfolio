@@ -2,44 +2,80 @@
   <!DOCTYPE html>
   <head>
     <title>Andy's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
     <script async defer type="text/javascript" src="assets/js/scripts.js"></script>
   </head>
   <body>
     <!--NAVIGATION HEADER-->
     <header>
-      <nav class="nav">
-        <a href="index.html">  
-          <img class="logo" src="assets/images/dark_logo.svg" alt="Main logo">
+      <nav id="navbar">
+        <a id="logo" href="index.html">  
+          <img class="logo grow" src="assets/images/dark_logo.svg" alt="Main logo">
         </a>
-        <div class="corner__nav__group">
-          <ul class="nav__link__cluster">
-            <li class="nav__link">
-              <a href="index.html">  
-                <img src="assets/images/dark_gmail.svg" alt="Gmail link logo">
-              </a>
-            </li>
-            <li class="nav__link">
-              <a href="index.html">  
-                <img src="assets/images/dark_github.svg" alt="Github link logo">
-              </a>
-            </li>
-            <li class="nav__link">
-              <a href="index.html">  
-                <img src="assets/images/dark_linkedin.svg" alt="Linkedin link logo">
-              </a>
-            </li>
-          </ul>
-        </div>
+        <ul class="nav__cluster">
+          <li class="nav__link grow">
+            <a href="mailto:ajsmith3005@gmail.com">  
+              <img src="assets/images/dark_gmail.svg" alt="Gmail link logo">
+            </a>
+          </li>
+          <li class="nav__link grow">
+            <a href="https://github.com/ajsmith3005/" target="_blank">  
+              <img src="assets/images/dark_github.svg" alt="Github link logo">
+            </a>
+          </li>
+          <li class="nav__link grow">
+            <a href="https://www.linkedin.com/in/andrew-smith-39838b219" target="_blank">  
+              <img src="assets/images/dark_linkedin.svg" alt="Linkedin link logo">
+            </a>
+          </li>
+        </ul>        
       </nav>
     </header>
     <main>
-      <h1>Welcome.</h1>
-      <div>
-        <p>Hello, my name is Andrew, and I am a web developer in training</p>
-        <a class="underlined__link">About me</a>
-      </div>
-      
+      <section class="landing has-gutters">
+        <h1>Welcome.</h1>
+        <div class="landing-content">
+          <div class="landing-text">
+            <p>Hello, my name is Andrew, and I am a web developer in training.</p>
+          </div>
+          <a class="section-button grow" href="#about-me">About me</a>
+          <a class="section-button grow" href="#projects">Projects</a>
+        </div>
+      </section>
+      <section class="about-me has-gutters" id="about-me">
+        <h1>About me.</h1>
+        <p>I am an analytical chemist with four years of experience in the field. I am currently transitioning to a career in web development. I have completed several courses through Codecademy to gain experience in HTML, CSS, and JavaScript. I am excited to bring my analytical skills to the field of web development!</p>
+      </section>
+      <section class="projects has-gutters" id="projects">
+        <h1>Projects.</h1>
+        <div class="project-items-container">
+          <div class="project-item" id="tea-cozy-project-container">
+            <img class="project-image" src="assets/images/tea-cozy-screenshot.png" alt="Tea Cozy mockup page image">
+            <h3 class="project-heading">Tea Cozy</h3>
+            <p class="project-description">HTML and CSS were used to create a webpage according to a <a class="in-text-anchor grow" href="assets/images/img-tea-cozy-redline.jpg" target="_blank"><b>design specification.</b></a></p>
+            <a class="project-anchor section-button grow" href="projects/tea-cozy/index.html" target="_blank">View project</a>
+          </div>
+          <div class="project-item" id="">
+            <img class="project-image" src="assets/images/" alt="Tea Cozy mockup page image">
+            <h3 class="project-heading"></h3>
+            <p class="project-description"></p>
+            <a class="project-anchor  section-button grow"></a>
+          </div>
+          <div class="project-item" id="">
+            <img class="project-image" src="assets/images/" alt="Tea Cozy mockup page image">
+            <h3 class="project-heading"></h3>
+            <p class="project-description"></p>
+            <a class="project-anchor  section-button grow"></a>
+          </div>
+          <div class="project-item" id="">
+            <p>More coming soon!</p>
+          </div>
+        </div>        
+      </section>
     </main>
   </body>
 </html>
