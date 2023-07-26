@@ -1,7 +1,7 @@
 :root {
-  --font-calc: clamp(14px, calc(0.4em + 1vw), 50px);
-  --logo-height: clamp(20px, 3em, 500px);
-  --side-margin: 1.5em;
+  --font-calc: clamp(16px, calc(0.4em + 1vw), 50px);
+  --logo-height: clamp(50px, 3em, 500px);
+  --side-margin: 1em;
   --background-color: #ffffff;
   --background-image-offset: 75%;
   --text-color: #000000;
