@@ -11,7 +11,7 @@
   --bold-font-weight: 350;
 }
 
-.dark-mode {
+html.dark-mode {
   --background-color: #000000;
   --text-color: #ffffff;
 }
@@ -28,6 +28,18 @@ html {
 a,p,h1,h3,nav path {
   color: var(--text-color);
   fill: var(--text-color);
+}
+
+#dark-svg-path {
+  display: none;
+}
+
+html.dark-mode #dark-svg-path {
+  display: initial;
+}
+
+html.dark-mode #light-svg-path {
+  display: none;
 }
 
 body {
