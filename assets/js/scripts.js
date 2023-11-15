@@ -1,9 +1,5 @@
-// console.log(document.getElementById('color-scheme-toggle'));
 
-// document.getElementById('color-scheme-toggle').addEventListener('click', function() {
-//   document.getElementsByTagName('body')[0].classList.toggle('dark-mode');
-// });
-
+//color scheme toggle
 
 document.getElementById('color-scheme-toggle').addEventListener('click', function() {
   let currentColorScheme = document.getElementById("html").getAttribute("class");
@@ -17,15 +13,16 @@ document.getElementById('color-scheme-toggle').addEventListener('click', functio
   }
 });
 
-
+//animate navbar to disappear/reappear on scrolling
 let navBarHeight = document.getElementById("navbar").offsetHeight;
 let prevScrollPos = window.pageYOffset;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
   if (prevScrollPos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
+    document.getElementById("navbar").style.top = "0.5rem";
   } else {
     document.getElementById("navbar").style.top = -1 * navBarHeight + "px";
   }
   prevScrollPos = currentScrollPos;
 }
+
