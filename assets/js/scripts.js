@@ -1,4 +1,3 @@
-
 //color scheme toggle
 
 document.getElementById('color-scheme-toggle').addEventListener('click', function() {
@@ -15,7 +14,9 @@ document.getElementById('color-scheme-toggle').addEventListener('click', functio
 
 //animate navbar to disappear/reappear on scrolling
 let navBarHeight = document.getElementById("navbar").offsetHeight;
+
 let prevScrollPos = window.pageYOffset;
+
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
   if (prevScrollPos > currentScrollPos) {
@@ -25,4 +26,3 @@ window.onscroll = function() {
   }
   prevScrollPos = currentScrollPos;
 }
-
