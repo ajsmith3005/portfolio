@@ -9,6 +9,7 @@
   --radius-general: 0.4em;
   --paragraph-width: calc(var(--background-image-offset) - 10%);
   --bold-font-weight: 350;
+  --scroll-progress-height: 0.5rem
 }
 
 html.dark-mode {
@@ -44,8 +45,15 @@ html.dark-mode #light-svg-path {
 
 body {
   scroll-padding-top: var(--logo-height);
-  background: url(../images/geometric_background_accent.svg) no-repeat var(--background-image-offset) 0 scroll;
   }
+
+.background-svg {
+  position: fixed;
+  z-index: -1;
+  right: 15%;
+  transform: rotateY(90deg);
+  height: 90vh;
+}
 
 header {
   width: 100%;
@@ -57,9 +65,10 @@ header {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 0.5rem;
   width: 100%;
   transition: 0.3s;
+  z-index: 100;
 }
 
 #logo svg {
@@ -84,14 +93,6 @@ ul {
   fill: var(--text-color);
 }
 
-.grow { 
-  transition: all .2s ease-in-out; 
-  }
-  
-.grow:hover { 
-  transform: scale(1.05);
-  opacity: 70%; 
-  }
 
 main>section+section {
   margin-top: 5rem;
@@ -149,6 +150,7 @@ section.projects {
   width: 100%;
   justify-content:center;
   gap: 1.5em 1.5em;
+  perspective: 1000px;
 }
 
 .project-item {
@@ -178,6 +180,19 @@ footer {
   height: var(--logo-height);
 }
 
+/*responsive styling for mouse activivty*/
+
+.grow { 
+  transition: all .2s ease-in-out; 
+  }
+  
+.grow:hover { 
+  transform: scale(1.05);
+  opacity: 70%; 
+  }
+
+/*responsive styling for different screen sizes*/
+
 @media only screen and (max-width: 550px){
 
   body {
@@ -198,5 +213,45 @@ footer {
   }
   section.about-me p {
     width: auto;
+  }
+}
+
+/* scroll tracking - see related JS*/
+
+.scroll-tracker {
+  height: var(--scroll-progress-height);
+  background-color: var(--text-color);
+  position: fixed;
+  inset: 0 0 auto;
+  transform-origin: left;
+  z-index: 102;
+}
+
+.scroll-tracker-backer {
+  height: var(--scroll-progress-height);
+  background-color: var(--background-color);
+  position: fixed;
+  width: 100%;
+  z-index: 101;
+}
+
+/*rotate element animation using only CSS*/
+
+.rotate-in-x {
+  animation: rotate-in-x linear;
+  animation-timeline: view();
+  animation-range: entry -10% entry 110%;
+}
+
+@keyframes rotate-in-x {
+  from {
+    opacity: 0.35;
+    transform: rotateX(90deg) rotateY(45deg);
+    z-index: 0;
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg);
+    z-index: 90;
   }
 }

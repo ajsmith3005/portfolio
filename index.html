@@ -4,15 +4,13 @@
       <title>Andy's Portfolio</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="UTF-8">
-      <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap" rel="stylesheet"> -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Asul&family=Work+Sans&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
       <link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
       <script async defer type="text/javascript" src="assets/js/scripts.js"></script>
+      <script defer type="module" src="assets/js/index.js"></script>
     </head>
     <body>
       <!--NAVIGATION HEADER-->
@@ -63,7 +61,11 @@
             </li>
           </ul>        
         </nav>
+        <!-- SCROLL PROGRESS BAR -->
+        <div class="scroll-tracker-backer"><div class="scroll-tracker"></div></div>        
       </header>
+      <!-- ANIMATED BACKGROUND IMAGE -->
+      <img class="background-svg rotate-in-y" src="assets/images/geometric_background_accent.svg" alt="Geometric background image">
       <main>
         <!-- LANDING -->
         <section id="landing" class="landing has-gutters">
@@ -87,25 +89,25 @@
         <section class="projects has-gutters" id="projects">
           <h1>Projects.</h1>
           <div class="project-items-container">
-            <div class="project-item" id="tea-cozy-project-container">
+            <div class="project-item rotate-in-x" id="tea-cozy-project-container">
               <img class="project-image" src="assets/images/tea-cozy-screenshot.jpg" alt="Tea Cozy mockup page screenshot">
               <h3 class="project-heading">Tea Cozy</h3>
               <p class="project-description">HTML and CSS were used to create a webpage according to a <a class="in-text-anchor grow" href="assets/images/img-tea-cozy-redline.jpg" target="_blank"><b>design specification</b></a>. Element positioning and sizing was made responsive using flexbox</p>
               <a class="project-anchor section-button grow" href="projects/tea-cozy/index.html" target="_blank">View project</a>
             </div>
-            <div class="project-item" id="task-board-project-container">
+            <div class="project-item rotate-in-x" id="task-board-project-container">
               <img class="project-image" src="assets/images/task-board.jpg" alt="Task board screenshot">
               <h3 class="project-heading">Task Board</h3>
               <p class="project-description">CSS grid was used to adjust the layout and introduce responsive behavior when adding task items to a task board. A button is included on this example to toggle between styled and unstyled versions.</p>
               <a class="project-anchor  section-button grow" href="projects/task-board/index.html" target="_blank">View project</a>
             </div>
-            <div class="project-item" id="tsunami-coffee-project-container">
+            <div class="project-item rotate-in-x" id="tsunami-coffee-project-container">
               <img class="project-image" src="assets/images/tsunami-coffee.jpg" alt="Tsunami coffee screenshot">
               <h3 class="project-heading">Tsunami Coffee</h3>
               <p class="project-description">Relative units and media queries were used to make the layout of this example webpage respond to changes in screen size. A button is included on this example to toggle between styled and unstyled versions.</p>
               <a class="project-anchor  section-button grow" href="projects/tsunami-coffee/index.html" target="_blank">View project</a>
             </div>
-            <div class="project-item" id="">
+            <div class="project-item rotate-in-x" id="">
               <p>More coming soon!</p>
             </div>
           </div>        
