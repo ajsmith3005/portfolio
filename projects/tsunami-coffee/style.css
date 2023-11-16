@@ -14,7 +14,7 @@ body {
 .main {
   height: 30rem;
   padding-top: 1rem;
-  background-image: url(https://content.codecademy.com/courses/freelance-1/unit-5/tsunami-coffee/images/bg-photo.png);
+  background-image: url(assets/images/bg-photo.webp);
   background-size: cover;
 }
 

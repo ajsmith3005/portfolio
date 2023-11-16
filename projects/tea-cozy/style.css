@@ -27,7 +27,7 @@ a {
 
 .mission {
   height: 700px;
-  background-image: url("https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg?_gl=1*1u9tfoi*_ga*OTk0MDcxNzMxMC4xNjYzNjM4ODQ5*_ga_3LRZM6TM9L*MTY3MDg5NjExMy44Ny4xLjE2NzA4OTYxMTYuNTcuMC4w");
+  background-image: url("assets/images/img-mission-background.jpg");
   display: flex;
   flex-basis: 1200px;
   align-items: center;
@@ -84,7 +84,7 @@ a {
 
 .locations {
   display: flex;
-  background-image: url("https://content.codecademy.com/courses/freelance-1/unit-4/img-locations-background.jpg?_gl=1*fe2nu2*_ga*OTk0MDcxNzMxMC4xNjYzNjM4ODQ5*_ga_3LRZM6TM9L*MTY3MTA3MzQyNC44OS4xLjE2NzEwNzM0MjguNTYuMC4w");
+  background-image: url("assets/images/img-locations-background.jpg");
   height: 500px;
   flex-basis: 1200px;
   justify-content: center;
