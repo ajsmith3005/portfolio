@@ -240,7 +240,7 @@ footer {
 .rotate-in-x {
   animation: rotate-in-x linear;
   animation-timeline: view();
-  animation-range: entry -10% entry 110%;
+  animation-range: entry -10% entry 90%;
 }
 
 @keyframes rotate-in-x {

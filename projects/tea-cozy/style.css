@@ -31,6 +31,8 @@ a {
   display: flex;
   flex-basis: 1200px;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mission_banner {
@@ -60,7 +62,7 @@ a {
 
 .totm__text {
   display: flex;
-  justifvby-content: center;
+  justify-content: center;
 }
 
 .totm__flavs {
