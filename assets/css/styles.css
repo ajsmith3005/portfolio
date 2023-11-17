@@ -1,11 +1,13 @@
 :root {
   --font-calc: clamp(16px, calc(0.4em + 1vw), 50px);
   --logo-height: clamp(50px, 3em, 500px);
-  --side-margin: 1em;
+  --side-padding: 3rem;
   --background-color: #ffffff;
+  --accent-color: #d9daf177;
   --background-image-offset: 75%;
   --text-color: #000000;
-  --button-padding: clamp(2px, 0.25em, 10px);
+  --button-padding-top-bottom: clamp(2px, 0.25em, 10px);
+  --button-padding-sides: clamp(8px, 1em, 15px);
   --radius-general: 0.4em;
   --paragraph-width: calc(var(--background-image-offset) - 10%);
   --bold-font-weight: 350;
@@ -24,9 +26,10 @@ html {
   font-size: var(--font-calc);
   scroll-padding-top: clamp(20px, var(--logo-height), 500px);
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--logo-height) + var(--scroll-progress-height) + 0.5rem);
 }
 
-a,p,h1,h3,nav path {
+a,p,h1,h2,h3,nav path {
   color: var(--text-color);
   fill: var(--text-color);
 }
@@ -45,18 +48,34 @@ html.dark-mode #light-svg-path {
 
 body {
   scroll-padding-top: var(--logo-height);
-  }
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding-inline: var(--side-padding);
+  box-sizing: border-box;
+}
 
 .background-svg {
   position: fixed;
-  z-index: -1;
+  z-index: -100;
   right: 15%;
   transform: rotateY(90deg);
   height: 90vh;
+  top: 10vh;
 }
 
 header {
   width: 100%;
+}
+
+nav .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: ;
 }
 
 #navbar {
@@ -73,7 +92,6 @@ header {
 
 #logo svg {
   height: var(--logo-height);
-  margin-left: var(--side-margin);
 }
 
 ul {
@@ -93,22 +111,12 @@ ul {
   fill: var(--text-color);
 }
 
-
-main>section+section {
-  margin-top: 5rem;
-}
-
-.has-gutters {
-  padding: 0px var(--side-margin);
-}
-
 section.landing {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   height: 100vh;
-  padding: 0px var(--side-margin);
 }
 
 div.landing-text {
@@ -119,22 +127,34 @@ div.landing-text {
 a.section-button {
   display: inline-block;
   text-decoration: none;
+  min-width: 6em;
+  text-align: center;
   border: 2px solid var(--text-color);
   border-radius: var(--radius-general);
-  padding:  var(--button-padding) var(--button-padding);
+  padding:  var(--button-padding-top-bottom) var(--button-padding-sides);
   background-color: var(--background-color);
   color: var(--text-color);
-  margin-right: 0.5em;
-  margin-top: 0.5rem
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  transition: all .2s ease-in-out;
+}
+
+a.section-button:hover {
+  background-color: var(--accent-color);
 }
 
 #profile-image {
   width: 10em;
 }
 
-section.about-me p{
+section.about-me {
+  height: 90vh;
+}
+
+section.about-me p {
   width: var(--paragraph-width);
 }
+
 
 section.projects {
   display: flex;
@@ -157,16 +177,29 @@ section.projects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: clamp(200px, 28%, 800px);
-  background-color: var(--background-color);
-  border: 2px solid var(--text-color);
+  background-color: var(--accent-color);
   border-radius: var(--radius-general);
-  padding: 1.5%;
+  /* padding: 1.5%; */
 }
 
 .project-image {
   width: 100%;
+  border-radius: var(--radius-general) var(--radius-general) 0% 0%;
+}
+
+.project-content {
+  padding: 1.5%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.more-coming {
+  z-index: -1;
 }
 
 .in-text-anchor {
@@ -190,6 +223,8 @@ footer {
   transform: scale(1.05);
   opacity: 70%; 
   }
+
+
 
 /*responsive styling for different screen sizes*/
 
@@ -216,6 +251,8 @@ footer {
   }
 }
 
+
+
 /* scroll tracking - see related JS*/
 
 .scroll-tracker {
@@ -235,23 +272,25 @@ footer {
   z-index: 101;
 }
 
+
+
 /*rotate element animation using only CSS*/
 
-.rotate-in-x {
-  animation: rotate-in-x linear;
+.rotate-in {
+  animation: rotate-in linear;
   animation-timeline: view();
   animation-range: entry -10% entry 90%;
 }
 
-@keyframes rotate-in-x {
+@keyframes rotate-in {
   from {
     opacity: 0.35;
     transform: rotateX(90deg) rotateY(45deg);
-    z-index: 0;
+    /* z-index: 0; */
   }
   to {
     opacity: 1;
     transform: rotateX(0deg) rotateY(0deg);
-    z-index: 90;
+    /* z-index: 90; */
   }
 }
