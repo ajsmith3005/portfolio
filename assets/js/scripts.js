@@ -1,4 +1,4 @@
-//color scheme toggle
+//====color scheme toggle====
 
 document.getElementById('color-scheme-toggle').addEventListener('click', function() {
   let currentColorScheme = document.getElementById("html").getAttribute("class");
@@ -12,7 +12,9 @@ document.getElementById('color-scheme-toggle').addEventListener('click', functio
   }
 });
 
-//animate navbar to disappear/reappear on scrolling
+
+//====animate navbar to disappear/reappear on scrolling====
+
 let navBarHeight = document.getElementById("navbar").offsetHeight;
 
 let prevScrollPos = window.pageYOffset;
@@ -26,3 +28,48 @@ window.onscroll = function() {
   }
   prevScrollPos = currentScrollPos;
 }
+
+
+//====animate portrait image to slide and fade in on scrolling====
+
+const image = document.querySelector('.profile-image');
+
+const imageObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("slide-in", entry.isIntersecting);
+    if(entry.isIntersecting) imageObserver.unobserve(entry.target);
+})},
+{
+  threshold: 0.5,
+});
+
+imageObserver.observe(image);
+
+
+//====animate cursor====
+
+const masked = document.querySelector('.masked');
+const cursorMovement = function (e) {
+  //gets mouse position
+  let x = e.pageX;
+  let y = e.pageY;
+
+  let cursorSize = '4em';
+
+  //centers masking cursor position on mouse position
+  masked.style.webkitMaskPositionX = 'calc(' + x + 'px - 0.5 * ' + cursorSize + ')';
+  masked.style.webkitMaskPositionY = 'calc(' + y + 'px - 0.5 * ' + cursorSize + ')';
+  masked.style.webkitMaskSize = cursorSize;
+
+  //makes cursor visible upon movement
+  masked.style.display = 'block';
+}
+
+//follow cursor on mousemove
+document.addEventListener('mousemove', cursorMovement);
+
+//cursor effects on mouseout
+document.addEventListener('mouseout', () =>{
+    cursorInner.style.display = 'none';
+    masked.style.webkitMaskSize = '0px';
+})

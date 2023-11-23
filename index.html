@@ -6,9 +6,9 @@
       <meta charset="UTF-8">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Asul&family=Work+Sans&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
+      <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
       <script async defer type="text/javascript" src="assets/js/scripts.js"></script>
       <script defer type="module" src="assets/js/index.js"></script>
     </head>
@@ -66,8 +66,10 @@
         <!-- SCROLL PROGRESS BAR -->
         <div class="scroll-tracker-backer"><div class="scroll-tracker"></div></div>        
       </header>
-      <!-- ANIMATED BACKGROUND IMAGE -->
-      <img class="background-svg rotate-in-y" src="assets/images/geometric_background_accent.svg" alt="Geometric background image">
+        <!-- ANIMATED BACKGROUND IMAGE -->
+        <div class="landing-background-wrapper">
+          <img class="masked" src="assets/images/hire-me.png" alt="Background image that is sure to get me hired">
+        </div>
       <main class="content-wrapper">
         <!-- LANDING -->
         <section id="landing" class="landing">
@@ -83,7 +85,7 @@
         <!-- ABOUT ME -->
         <section class="about-me" id="about-me">
           <h2>About me.</h2>
-          <img id="profile-image" src="assets/images/Andy.png" alt="image of Andrew with a beard">
+          <img class="profile-image" src="assets/images/Andy.png" alt="image of Andrew with a beard">
           <p>I am an analytical chemist with four years of experience in the field. I am currently transitioning to a career in web development. I have completed several courses through Codecademy to gain experience in HTML, CSS, and JavaScript. I am excited to bring my analytical skills to the field of web development!</p>
           <a class="section-button change-color" href="https://www.linkedin.com/in/andrew-smith-39838b219" target="_blank">Linkedin</a>
         </section>
@@ -91,12 +93,22 @@
         <section class="projects" id="projects">
           <h2>Projects.</h2>
           <div class="project-items-container">
+            <div class="project-item rotate-in" id="tree-lafayette-project-container">
+              <img class="project-image" src="assets/images/tree-lafayette-screenshot.png" alt="Tree Lafayette homepage screenshot">
+              <div class="project-content">
+                <div class="project-text">
+                  <h3 class="project-heading">Tree Lafayette</h3>
+                  <p class="project-description">I have been managing maintenance and feature development on the WordPress site for Tree Lafayette, a nonprofit based in Lafayette IN, as well as providing support for content contributors.</p>
+                </div>
+                <a class="project-anchor section-button change-color" href="https://www.treelafayette.org/" target="_blank">View project</a>
+              </div>
+            </div>
             <div class="project-item rotate-in" id="tea-cozy-project-container">
               <img class="project-image" src="assets/images/tea-cozy-screenshot.png" alt="Tea Cozy mockup page screenshot">
               <div class="project-content">
                 <div class="project-text">
                   <h3 class="project-heading">Tea Cozy</h3>
-                  <p class="project-description">HTML and CSS were used to create a webpage according to a <a class="in-text-anchor grow" href="assets/images/img-tea-cozy-redline.jpg" target="_blank"><b>design specification</b></a>. Element positioning and sizing was made responsive using flexbox</p>
+                  <p class="project-description">HTML and CSS were used to create a webpage according to a <a class="in-text-anchor grow" href="assets/images/img-tea-cozy-redline.jpg" target="_blank"><b>design specification</b></a>. Element positioning and sizing was made responsive using flexbox.</p>
                 </div>
                 <a class="project-anchor section-button change-color" href="projects/tea-cozy/index.html" target="_blank">View project</a>
               </div>
@@ -120,9 +132,6 @@
                 </div>
                 <a class="project-anchor  section-button change-color" href="projects/tsunami-coffee/index.html" target="_blank">View project</a>
               </div>
-            </div>
-            <div class="project-item rotate-in more-coming" id="">
-              <p>More coming soon!</p>
             </div>
           </div>        
         </section>

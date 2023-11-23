@@ -1,7 +1,7 @@
 import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 
 
-//Scroll progress bar animation
+//====Scroll progress bar animation====
 
 const scrollTracker = document.querySelector(".scroll-tracker");
 
@@ -20,7 +20,7 @@ scrollTracker.animate(
 );
 
 
-//Rotation animation for background image - configured to be applied to any element with class .rotate-in-y
+//====Rotation animation for background image====
 
 const rotateInElementsY = document.querySelectorAll('.rotate-in-y');
 
