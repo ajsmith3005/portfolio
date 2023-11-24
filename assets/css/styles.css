@@ -143,6 +143,14 @@ ul {
   overflow: hidden;
 }
 
+.landing-gradient-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(to bottom, transparent, var(--background-color));
+}
+
 section.landing {
   display: flex;
   flex-direction: column;
@@ -328,9 +336,10 @@ footer {
 /*animated cursor*/
 
  .masked {
-  z-index: -100;
+  position: absolute;
+  z-index: -1000;
   max-width: 150%;
-  opacity: 30%;
+  opacity: 60%;
   object-fit: cover;
   -webkit-mask-image: url(../images/gradient-image.svg);
   -webkit-mask-repeat: no-repeat;
