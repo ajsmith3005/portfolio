@@ -41,5 +41,3 @@ rotateInElementsY.forEach((element) => {
     }
   );
 });
-
-

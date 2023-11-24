@@ -92,7 +92,6 @@ body {
   box-sizing: border-box;
 }
 
-
 header {
   width: 100%;
 }
@@ -101,10 +100,9 @@ nav .content-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-inline: ; */
 }
 
-#navbar {
+nav {
   background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
@@ -336,7 +334,7 @@ footer {
  .masked {
   z-index: -100;
   max-width: 150%;
-  opacity: 50%;
+  opacity: 30%;
   object-fit: cover;
   -webkit-mask-image: url(../images/gradient-image.svg);
   -webkit-mask-repeat: no-repeat;
