@@ -148,7 +148,7 @@ ul {
   width: 100%;
   position: absolute;
   z-index: -1;
-  background-image: linear-gradient(to bottom, transparent, var(--background-color));
+  background-image: linear-gradient(to bottom, transparent 70%, var(--background-color));
 }
 
 section.landing {
@@ -252,7 +252,29 @@ section.about-me p {
 
 footer {
   width: auto;
-  height: var(--logo-height);
+  background-color: var(--accent-color);
+  margin-top: 2em;
+  padding-bottom: 1em;
+  box-shadow: 0 4px 8px 0 var(--shadow1), 0 6px 20px 0 var(--shadow2);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.contact {
+  margin-top: 1em;
+}
+
+footer p a {
+  padding: 0em 1em;
+}
+
+.show-for-large {
+  display: block;
+}
+
+.hide-for-large {
+  display: none;
 }
 
 /*responsive styling for mouse activivty*/
@@ -292,6 +314,14 @@ footer {
 
   .masked {
     visibility: hidden;
+  }
+
+  .show-for-large {
+    display: none;
+  }
+
+  .hide-for-large {
+    display: block;
   }
 }
 
@@ -339,7 +369,7 @@ footer {
   position: absolute;
   z-index: -1000;
   max-width: 150%;
-  opacity: 60%;
+  opacity: 30%;
   object-fit: cover;
   -webkit-mask-image: url(../images/gradient-image.svg);
   -webkit-mask-repeat: no-repeat;
