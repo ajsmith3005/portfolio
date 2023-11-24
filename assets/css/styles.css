@@ -258,7 +258,6 @@ footer {
   opacity: 70%; 
   }
 
-
 /*responsive styling for different screen sizes*/
 
 @media only screen and (max-width: 550px){
@@ -288,7 +287,6 @@ footer {
   }
 }
 
-
 /* scroll tracking - see related JS*/
 
 .scroll-tracker {
@@ -308,7 +306,6 @@ footer {
   z-index: 101;
 }
 
-
 /*rotate element animation using only CSS*/
 
 .rotate-in {
@@ -327,7 +324,6 @@ footer {
     transform: rotateX(0deg) rotateY(0deg);
   }
 }
-
 
 /*animated cursor*/
 
