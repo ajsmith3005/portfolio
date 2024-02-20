@@ -6,31 +6,31 @@
   --font2: Open Sans, sans-serif;
   --logo-height: clamp(50px, 3em, 500px);
   --side-padding: 2rem;
-  --background-color: #ffffff;
-  --accent-color: #f4f7ff;
+  --background-color-high-contrast: #fffaff;
+  --background-color-low-contrast: #f4f5f4;
+  --accent-color-low-contrast: #f05d5e;
+  --accent-color-high-contrast: #fdecec;
   --background-image-offset: 75%;
-  --text-color: #000000;
-  --button-padding-top-bottom: clamp(2px, 0.25em, 10px);
-  --button-padding-sides: clamp(8px, 1em, 15px);
-  --radius-general: 0.4em;
+  --text-color: #303036;
+  --radius-general: 0.25em;
   --paragraph-width: calc(var(--background-image-offset) - 10%);
   --bold-font-weight: 350;
   --scroll-progress-height: 0.5rem;
   --ideal-max-width: 60rem;
   --shadow1: rgba(0, 0, 0, 0.15);
-  --shadow2: rgba(0, 0, 0, 0.13);
+  --button-font-size: 0.75em;
 }
 
 html.dark-mode {
-  --background-color: #000000;
+  --background-color-high-contrast: #303036;
+  --background-color-low-contrast: #3d3b3f;
   --text-color: #ffffff;
-  --accent-color: #3a3a3a;
-  --shadow1: rgba(255, 255, 255, 0.2);
-  --shadow2: rgba(255,255,255, 0.19);
+  --accent-color-high-contrast: #3d3b3f;
+  --shadow1: rgb(255, 255, 255);
 }
 
 html {
-  background-color: var(--background-color);
+  background-color: var(--background-color-high-contrast);
   color: seashell;
   font-size: var(--font-calc);
   scroll-padding-top: clamp(20px, var(--logo-height), 500px);
@@ -103,7 +103,7 @@ nav .content-wrapper {
 }
 
 nav {
-  background-color: var(--background-color);
+  background-color: var(--background-color-high-contrast);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -148,7 +148,7 @@ ul {
   width: 100%;
   position: absolute;
   z-index: -1;
-  background-image: linear-gradient(to bottom, transparent 70%, var(--background-color));
+  background-image: linear-gradient(to bottom, transparent 70%, var(--background-color-high-contrast));
 }
 
 section.landing {
@@ -164,25 +164,37 @@ div.landing-text {
   margin-bottom: 0.67rem;
 }
 
-a.section-button {
+.button {
   font-family: var(--font2);
+  font-size: 0.75em;
   display: inline-block;
   text-decoration: none;
   min-width: 6em;
   font-weight: bold;
   text-align: center;
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--accent-color-low-contrast);
   border-radius: var(--radius-general);
-  padding:  var(--button-padding-top-bottom) var(--button-padding-sides);
-  background-color: var(--background-color);
-  color: var(--text-color);
+  padding:  clamp(2px, 0.75em, 20px) clamp(8px, 2em, 40px);
+  background-color: var(--background-color-high-contrast);
+  color: var(--accent-color-low-contrast);
   margin-right: 0.5rem;
   margin-top: 1em;
   transition: all .2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
 }
 
-a.section-button:hover {
-  background-color: var(--accent-color);
+.button:hover {
+  background-color: var(--accent-color-high-contrast);
+}
+
+.accent-button {
+  background-color: var(--accent-color-low-contrast);
+  color: var(--accent-color-high-contrast);
+}
+
+.accent-button:hover {
+  color: var(--accent-color-low-contrast);
 }
 
 .profile-image {
@@ -223,7 +235,7 @@ section.about-me p {
   width: clamp(200px, 45%, 800px);
   background-color: var(--accent-color);
   border-radius: var(--radius-general);
-  box-shadow: 0 4px 8px 0 var(--shadow1), 0 6px 20px 0 var(--shadow2);
+  box-shadow: 0 0 15px 0 var(--shadow1);
 }
 
 .project-heading {
@@ -253,9 +265,9 @@ section.about-me p {
 footer {
   width: auto;
   background-color: var(--accent-color);
-  margin-top: 2em;
-  padding-bottom: 1em;
-  box-shadow: 0 4px 8px 0 var(--shadow1), 0 6px 20px 0 var(--shadow2);
+  margin-top: 5em;
+  padding: 3em 0;
+  box-shadow: 0 0 15px 0 var(--shadow1);
   display: inline-block;
   text-align: center;
   width: 100%;
@@ -263,6 +275,7 @@ footer {
 
 .contact {
   margin-top: 1em;
+  font-size: var(--button-font-size);
 }
 
 footer p a {
@@ -338,7 +351,7 @@ footer p a {
 
 .scroll-tracker-backer {
   height: var(--scroll-progress-height);
-  background-color: var(--background-color);
+  background-color: var(--background-color-high-contrast);
   position: fixed;
   width: 100%;
   z-index: 101;
@@ -369,7 +382,7 @@ footer p a {
   position: absolute;
   z-index: -1000;
   max-width: 150%;
-  opacity: 30%;
+  opacity: 50%;
   object-fit: cover;
   -webkit-mask-image: url(../images/gradient-image.svg);
   -webkit-mask-repeat: no-repeat;
