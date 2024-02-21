@@ -54,7 +54,7 @@ const cursorMovement = function (e) {
   let x = e.pageX;
   let y = e.pageY;
 
-  let cursorSize = '4em';
+  let cursorSize = '8em';
 
   //centers masking cursor position on mouse position
   masked.style.webkitMaskPositionX = 'calc(' + x + 'px - 0.5 * ' + cursorSize + ')';
