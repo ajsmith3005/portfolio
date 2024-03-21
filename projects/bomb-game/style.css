@@ -1,0 +1,357 @@
+:root {
+  --fade-time: 300ms;
+  --streak-color: rgba(211, 211, 211, 40%);
+  --streak-delay: 1.3s;
+  --wire-panel-width: 23vw;
+  --wire-panel-height: 13vw;
+  --wire-panel-margin: 23%;
+  --compartment-width: 6vw;
+  --bomb-rotation-start: -19deg;
+  --bomb-rotation-finish: -17deg;
+  --bomb-trans-x: 50vw;
+  --bomb-trans-y: -180vh;
+}
+
+body {
+  min-height: 150vh;
+  background-image: linear-gradient(#161616, #2f2f2f);
+  margin: 0px;
+  overflow: hidden;
+}
+
+.instructions-btn{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  fill: var(--streak-color);
+  transition: 300ms;
+}
+
+.instructions-btn:hover {
+  transform: scale(1.1);
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: var(--fade-time);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: var(--fade-time);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.falling-streak {
+  position: absolute;
+  z-index: -1000;
+  height: 45vh;
+  width: 1vw;
+  visibility: hidden;
+  background-image: linear-gradient(transparent, var(--streak-color), transparent);
+  animation-name: bottom-to-top;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.streak1 {
+  margin-left: 8%;
+  animation-delay: 500ms;
+}
+
+.streak2 {
+  margin-left: 26%;
+  animation-delay: 0ms;
+}
+
+.streak3 {
+  margin-left: 35%;
+  animation-delay: 1500ms;
+}
+
+.streak4 {
+  margin-left: 60%;
+  animation-delay: 900ms;
+}
+
+.streak5 {
+  margin-left: 85%;
+  animation-delay: 1700ms;
+}
+
+.title-row {
+  margin-top: 42px;
+  text-align: center;
+  margin-bottom: 21px;
+}
+
+.instructions-title {
+  display: inline;
+  font-family: 'Work Sans';
+  font-size: 18px;
+  color: #00ffff;
+}
+
+.instructions-row {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.instructions-number {
+  padding-right: 25px;
+  font-family: 'Work Sans';
+  font-size: 36px;
+  color: #00ffff;
+}
+
+.instructions-text {
+  padding: 10px;
+  font-family: 'Work Sans';
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 80%);
+  z-index: 100;
+}
+
+.mush-cloud {
+  height: 40vh;
+  fill: var(--streak-color);
+}
+
+.start-btn {
+  margin-inline: auto;
+  margin-block-start: 20px;
+  width: 120px;
+  background-color: #00ffff;
+  transition: 0.3s;
+  padding: 18px;
+  font-family: 'Work Sans';
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  border: #00ffff solid 3px;
+}
+
+.start-btn:hover {
+  background-color: transparent;
+  color: #00ffff;
+}
+
+
+.streak-container {
+  position: absolute;
+  z-index: -1;
+  height: 150vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.game-container{
+  text-align: center;
+  height: auto;
+  width: 100vw;
+  margin: auto;
+  position: fixed;
+  bottom: 20vh;
+}
+
+.bomb-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  position: relative ;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 55vh;
+  width: 50vw;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.bomb-image {
+  position: absolute;
+  z-index: -100;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.flag-container {
+  display: flex;
+  width: 100%;
+  height: 1vh;
+  position: absolute;
+  z-index: -50;
+  justify-content: center;
+  margin-bottom: 20vh;
+}
+
+.flag-pole {
+  width:15vw;
+  height:100%;
+  border-radius: 3px;
+  visibility: hidden;
+}
+
+.start-falling {
+  animation-name: start-falling;
+  animation-duration: 3000ms;
+}
+
+.fly-off {
+  animation-name: fly-off;
+  animation-duration: 1.7s;
+  animation-fill-mode: forwards;
+}
+
+.falling {
+  animation-name: continue-falling;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.explode {
+  animation-name: explode;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  transform-origin: left;
+  animation-timing-function: cubic-bezier(0.46, 0.07, 0.08, 2.21);
+  visibility: visible;
+}
+
+.panel-cover {
+  position: absolute;
+  z-index: 15;
+  width: calc(var(--wire-panel-width) + 2.5vw);
+  margin-right: var(--wire-panel-margin);
+}
+
+.wire-panel {
+  display: flex;
+  background-image: url(assets/images/wire_panel.svg);
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-position: center;  
+  background-size:auto;
+  width: var(--wire-panel-width);
+  height: var(--wire-panel-height);
+  justify-content:space-evenly;
+  overflow: hidden;
+  margin-right: var(--wire-panel-margin);
+}
+
+.wire-compartment {
+  cursor: url('assets/images/cutters_icon.svg'), auto;
+  width: var(--compartment-width);
+}
+
+@media only screen and (max-width: 800px) {
+  :root {
+    --bomb-rotation-start: -1.5deg;
+    --bomb-rotation-finish: 1.5deg;
+    --bomb-trans-x: -180vh;
+    --bomb-trans-y: 50vw;
+    --wire-panel-width: 50%;
+    --wire-panel-height: 50%;
+    --compartment-width: 25%;
+  }  
+  
+  .instructions-btn{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    height: 20px;
+    width: 20px;
+    fill: var(--streak-color);
+  }
+
+  .bomb-image {
+      rotate: -90deg;
+    }
+
+    .bomb-container {
+      width: 80vw;
+    }
+
+    .flag-container {
+      /* display: flex; */
+      width: 100%;
+      height: 1vh;
+      position: absolute;
+      z-index: -50;
+      justify-content: center;
+      margin-bottom: 28%;
+      margin-left: 20%;
+    }
+
+    .flag-pole {
+      width: 20vh;
+    }
+
+    .wire-panel {
+      rotate: -90deg;
+      margin-right: 0;
+      margin-top: var(--wire-panel-margin);
+    }
+
+    .panel-cover {
+      rotate:-90deg;
+      margin-right: 0;
+      margin-top: var(--wire-panel-margin);
+    }
+
+}
+
+@keyframes fade-out {
+  0% {opacity: 100%;}
+  100% {opacity: 0; display: none;}  
+}
+
+@keyframes fade-in {
+  0% {opacity: 0; display: none;}
+  100% {opacity: 100%;}  
+}
+
+@keyframes bottom-to-top {
+  0% {transform: translateY(150vh);}
+  100% {transform: translateY(-160vh);}
+}
+
+@keyframes start-falling {
+  0% {rotate: 0deg;}
+  100% {rotate: var(--bomb-rotation-start);}
+}
+
+@keyframes fly-off {
+  0% {}
+  99% {transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y)); opacity: 0;}
+  100% {opacity: 0; display: none;}
+}
+
+@keyframes continue-falling {
+  0% {rotate: var(--bomb-rotation-start);}
+  100% {rotate: var(--bomb-rotation-finish);}
+}
+
+@keyframes explode {
+  0% {rotate: 0deg;}
+  100% {rotate: -110deg;}
+}
