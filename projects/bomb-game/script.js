@@ -36,6 +36,13 @@ document.addEventListener('contextmenu', event => {
   event.preventDefault();
 });
 
+//global event listener function
+function addGlobalEventListener(type, selector, callback) {
+  document.addEventListener(type, e => {
+    if (e.target.matches(selector)) callback(e)
+  })
+}
+
 // Define game logic to check wires, progress game, end game, and choose a random dangerous wire
 let fixWires = () => {
   for (let wire of wires) {
@@ -72,7 +79,6 @@ let gameOver = (status) => {
   } else {
     startButton.innerHTML = 'Game over! <br>Play again?';
     flagPole.classList.add('explode');
-    // setTimeout(() => {bomb.classList.add('falling');}, 3000);
     setTimeout(() => {showMenuOverlay()}, 600);
   }
   wireElement1.classList.remove('dangerous');
@@ -119,44 +125,19 @@ let wrongWireGenerator = (wrongWire) => {
   }
 }
 
-wireElement1.onclick = () => {
-  if (currentlyPlaying && isClicked(wireElement1)) {
-    if (wireElement1.src.toString().includes('red')) {
-      wireElement1.src = cutRedWirePath;
-    } else if (wireElement1.src.toString().includes('green')) {
-      wireElement1.src = cutGreenWirePath;
+//handles click events on wire compartments. Checks 
+addGlobalEventListener('click', '.wire-compartment', e => {
+  if (currentlyPlaying && isClicked(e.target)) {
+    if (e.target.src.toString().includes('red')) {
+      e.target.src = cutRedWirePath;
+    } else if (e.target.src.toString().includes('green')) {
+      e.target.src = cutGreenWirePath;
     } else {
-      wireElement1.src = cutBlueWirePath;
+      e.target.src = cutBlueWirePath;
     }
-    cutWire(wireElement1);
-  }
-}
-
-wireElement2.onclick = () => {
-  if (currentlyPlaying && isClicked(wireElement2)) {
-    if (wireElement2.src.toString().includes('red')) {
-      wireElement2.src = cutRedWirePath;
-    } else if (wireElement2.src.toString().includes('green')) {
-      wireElement2.src = cutGreenWirePath;
-    } else {
-      wireElement2.src = cutBlueWirePath;
-    }
-    cutWire(wireElement2)
-  }
-}
-
-wireElement3.onclick = () => {
-  if (currentlyPlaying && isClicked(wireElement3)) {
-    if (wireElement3.src.toString().includes('red')) {
-      wireElement3.src = cutRedWirePath;
-    } else if (wireElement3.src.toString().includes('green')) {
-      wireElement3.src = cutGreenWirePath;
-    } else {
-      wireElement3.src = cutBlueWirePath;
-    }
-    cutWire(wireElement3);
-  }
-}
+    cutWire(e.target);
+  };
+})
 
 let streakVisibility = () => {
   for (let streak of streaks) {
@@ -178,22 +159,23 @@ let dropBomb = () => {
   startButton.scrollIntoView({behavior: "smooth"});
 }
 
-instructionsBtn.onclick = () => {
+//event listeners for clicking the buttons
+addGlobalEventListener('click', '.instructions-btn', e => {
   if (menuOverlay.classList.contains("fade-out")) {
     showMenuOverlay();
   } else {
     hideMenuOverlay();
   }
-}
+})
 
-startButton.onclick = () => {
+addGlobalEventListener('click', '#start', () => {
   if (currentlyPlaying === false) {
     startRound();
   }
   if (menuOverlay.classList.contains("fade-in")) {
     hideMenuOverlay();
   }
-}
+})
 
 let hideMenuOverlay = () => {
   menuOverlay.classList.remove("fade-in");
@@ -223,5 +205,3 @@ let startRound = () => {
   dropBomb();
   setTimeout(() => {startButton.innerHTML = 'Continue';}, 500); 
 }
-
-
