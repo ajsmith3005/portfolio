@@ -79,7 +79,6 @@ let gameOver = (status) => {
   } else {
     startButton.innerHTML = 'Game over! <br>Play again?';
     flagPole.classList.add('explode');
-    // setTimeout(() => {bomb.classList.add('falling');}, 3000);
     setTimeout(() => {showMenuOverlay()}, 600);
   }
   wireElement1.classList.remove('dangerous');
@@ -160,22 +159,23 @@ let dropBomb = () => {
   startButton.scrollIntoView({behavior: "smooth"});
 }
 
-instructionsBtn.onclick = () => {
+//event listeners for clicking the buttons
+addGlobalEventListener('click', '.instructions-btn', e => {
   if (menuOverlay.classList.contains("fade-out")) {
     showMenuOverlay();
   } else {
     hideMenuOverlay();
   }
-}
+})
 
-startButton.onclick = () => {
+addGlobalEventListener('click', '#start', () => {
   if (currentlyPlaying === false) {
     startRound();
   }
   if (menuOverlay.classList.contains("fade-in")) {
     hideMenuOverlay();
   }
-}
+})
 
 let hideMenuOverlay = () => {
   menuOverlay.classList.remove("fade-in");
