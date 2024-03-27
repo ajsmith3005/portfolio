@@ -218,6 +218,8 @@ let startRound = () => {
   bomb.classList.remove('falling', 'start-falling');
   flagPole.classList.remove('explode');
   panelCover.classList.remove('fly-off');
+  panelCover.style.display = 'flex';
+  setTimeout(() => {panelCover.style.display = 'none'}, 2700);
   numIntactWires = 3;
   currentlyPlaying = true;
   randomWireGenerator();
