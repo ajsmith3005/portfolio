@@ -316,6 +316,7 @@ button:focus {
 
   .game-container {
     width: 100vw;
+    background-color: bisque;
   }
 
   .bomb-image {
