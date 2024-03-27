@@ -357,11 +357,11 @@ button:focus {
 
 @keyframes fade-out {
   0% {opacity: 100%;}
-  100% {opacity: 0; display: none;}  
+  100% {opacity: 0;}  
 }
 
 @keyframes fade-in {
-  0% {opacity: 0; display: none;}
+  0% {opacity: 0;}
   100% {opacity: 100%;}  
 }
 
@@ -378,7 +378,7 @@ button:focus {
 @keyframes fly-off {
   0% {}
   99% {transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y)); opacity: 0;}
-  100% {opacity: 0; display: none;}
+  100% {opacity: 0;}
 }
 
 @keyframes continue-falling {
