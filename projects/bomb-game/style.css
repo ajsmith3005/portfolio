@@ -306,6 +306,14 @@ button:focus {
     --compartment-width: 25%;
   }  
   
+  .instructions-btn .instructions-svg{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 25px;
+    width: 25px;
+  }
+
   .game-container {
     width: 100vw;
   }
