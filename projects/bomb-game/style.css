@@ -306,15 +306,6 @@ button:focus {
     --compartment-width: 25%;
   }  
   
-  .instructions-btn{
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    height: 20px;
-    width: 20px;
-    fill: var(--streak-color);
-  }
-
   .game-container {
     width: 100vw;
   }
