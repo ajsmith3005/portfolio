@@ -19,17 +19,28 @@ body {
   overflow: hidden;
 }
 
-.instructions-btn{
+button {
+  all: unset;
+}
+
+button:focus {
+  outline: revert;
+}
+
+.instructions-btn {
   position: fixed;
   top: 20px;
   right: 20px;
+}
+
+.instructions-svg {
   height: 40px;
   width: 40px;
   fill: var(--streak-color);
   transition: 300ms;
 }
 
-.instructions-btn:hover {
+.instructions-svg:hover {
   transform: scale(1.1);
 }
 
@@ -168,7 +179,6 @@ body {
   color: #00ffff;
 }
 
-
 .streak-container {
   position: absolute;
   z-index: -1;
@@ -269,13 +279,20 @@ body {
   width: var(--wire-panel-width);
   height: var(--wire-panel-height);
   justify-content:space-evenly;
+  align-items: center;
   overflow: hidden;
   margin-right: var(--wire-panel-margin);
 }
 
+.wire-compartment-container {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  width: var(--compartment-width);
+}
+
 .wire-compartment {
   cursor: url('assets/images/cutters_icon.svg'), auto;
-  width: var(--compartment-width);
 }
 
 @media only screen and (max-aspect-ratio: 1) {
@@ -311,7 +328,6 @@ body {
   }
 
   .flag-container {
-    /* display: flex; */
     width: 100%;
     height: 1vh;
     position: absolute;

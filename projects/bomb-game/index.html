@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <svg id="instructions-btn" class="instructions-btn" height="1792" viewBox="0 0 1792 1792" width="1792" xmlns="http://www.w3.org/2000/svg"><path d="M1152 1376v-160q0-14-9-23t-23-9h-96v-512q0-14-9-23t-23-9h-320q-14 0-23 9t-9 23v160q0 14 9 23t23 9h96v320h-96q-14 0-23 9t-9 23v160q0 14 9 23t23 9h448q14 0 23-9t9-23zm-128-896v-160q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v160q0 14 9 23t23 9h192q14 0 23-9t9-23zm640 416q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/></svg>
+    <button id="instructions-btn" class="instructions-btn">
+      <svg class="instructions-svg" height="1792" viewBox="0 0 1792 1792" width="1792" xmlns="http://www.w3.org/2000/svg"><path d="M1152 1376v-160q0-14-9-23t-23-9h-96v-512q0-14-9-23t-23-9h-320q-14 0-23 9t-9 23v160q0 14 9 23t23 9h96v320h-96q-14 0-23 9t-9 23v160q0 14 9 23t23 9h448q14 0 23-9t9-23zm-128-896v-160q0-14-9-23t-23-9h-192q-14 0-23 9t-9 23v160q0 14 9 23t23 9h192q14 0 23-9t9-23zm640 416q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/></svg>
+    </button>
     <div id="streak-container" class="streak-container">
       <div id="streak" class="falling-streak streak1"></div>
       <div class="falling-streak streak2"></div>
@@ -31,7 +33,7 @@
           <div class="instructions-text">If you manage to cut the live wire last, you avoid nulear destruction!</div>
         </div>
       </section>
-      <div id="start" class="start-btn">Start</div>
+      <button id="start" class="start-btn">Start</button>
     </div>
     <div class="game-container">
       <div id="bomb-container" class="bomb-container">
@@ -42,9 +44,15 @@
         </div>
         <svg id="panel-cover" class="panel-cover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 815 417"><defs><style>.cls-1{fill:#bcbcbc;stroke-width:6px;}.cls-1,.cls-2,.cls-3,.cls-4{stroke:#000;stroke-miterlimit:10;}.cls-2,.cls-3,.cls-4{fill:none;stroke-linecap:round;stroke-width:11px;}.cls-3{stroke-dasharray:0 95.78;}.cls-4{stroke-dasharray:0 91.23;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_5" data-name="Layer 5"><rect class="cls-1" x="3" y="3" width="809" height="411"/><line class="cls-2" x1="790.61" y1="390.96" x2="790.61" y2="390.96"/><line class="cls-3" x1="694.83" y1="390.96" x2="72.28" y2="390.96"/><line class="cls-2" x1="24.39" y1="390.96" x2="24.39" y2="390.96"/><line class="cls-4" x1="24.39" y1="299.73" x2="24.39" y2="71.65"/><line class="cls-2" x1="24.39" y1="26.04" x2="24.39" y2="26.04"/><line class="cls-3" x1="120.17" y1="26.04" x2="742.72" y2="26.04"/><line class="cls-2" x1="790.61" y1="26.04" x2="790.61" y2="26.04"/><line class="cls-4" x1="790.61" y1="117.27" x2="790.61" y2="345.35"/></g></g></svg>
         <div id="wire-panel" class="wire-panel">
-          <img id="wire1" class="wire-compartment intact" src=''>
-          <img id="wire2" class="wire-compartment intact" src=''>
-          <img id="wire3" class="wire-compartment intact" src=''>
+          <button class="wire-compartment-container">
+            <img id="wire1" class="wire-compartment intact" src=''>
+          </button>
+          <button class="wire-compartment-container">
+            <img id="wire2" class="wire-compartment intact" src=''>
+          </button>
+          <button class="wire-compartment-container">
+            <img id="wire3" class="wire-compartment intact" src=''>
+          </button>
         </div>
         <svg id="bomb" class="bomb-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1397.28 713.74"><defs><style>.cls-1{stroke:#000;stroke-width:3px;stroke-miterlimit:10;fill: #848484;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_3" data-name="Layer 3"><path class="cls-1" d="M54.56,159.84a17.79,17.79,0,0,0,0,35.57h15.8C25.84,243.26.5,298.3.5,356.87S25.84,470.48,70.36,518.34H54.56a17.78,17.78,0,0,0,0,35.56h54c1.67,1.35,3.34,2.7,5,4V155.81c-1.7,1.33-3.37,2.68-5,4Z"/><path class="cls-1" d="M901.72,356.87v267q12.35-5.55,24.15-11.47V101.3q-11.79-5.92-24.15-11.47Z"/><polygon class="cls-1" points="957.98 188.52 1117.95 281.12 1117.95 34.65 1000.83 147.71 957.98 188.52"/><polygon class="cls-1" points="1129.33 21.85 1129.33 356.87 1129.33 691.89 1396.78 691.89 1396.78 356.87 1396.78 21.85 1129.33 21.85"/><path class="cls-1" d="M943.85,190.2l50.49-48.1a519.67,519.67,0,0,0-58.51-35.68v171.5h65.47a18.49,18.49,0,1,1,0,37H935.83v83.94h65.47a18.49,18.49,0,0,1,0,37H935.83v171.5a519.67,519.67,0,0,0,58.51-35.68l-50.49-48.1,172-99.54,2.13,3.69V375.21H986.79a18.34,18.34,0,1,1,0-36.68H1118V286.05l-2.13,3.69Z"/><path class="cls-1" d="M566,.51,490.59,3.35l-18.2,23.53C385.34,35.28,305,55.54,236.18,84.77L216,70.22l-72.55,35.56V134.2q-10.26,6.84-19.92,14V565.54q9.66,7.19,19.92,14V608L216,643.52,236.18,629c68.8,29.24,149.16,49.49,236.21,57.89l18.2,23.53L566,713.23,584.06,691c116.52-2.53,224-26.1,312-64.54V87.33c-88-38.44-195.45-62-312-64.54ZM180.76,599.42l-10-5.32V119.64l10-5.32v485.1Z"/><polygon class="cls-1" points="1000.83 566.03 1117.95 679.09 1117.95 432.62 957.98 525.22 1000.83 566.03"/></g></g></svg>
       </div>
