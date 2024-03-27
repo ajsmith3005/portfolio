@@ -201,11 +201,13 @@ globalEventListener('click', document.getElementById( 'start' ), () => {
 let hideMenuOverlay = () => {
   menuOverlay.classList.remove("fade-in");
   menuOverlay.classList.add("fade-out");
+  setTimeout(() => {menuOverlay.style.display = "none";}, 400);
 }
 
 let showMenuOverlay = () => {
   menuOverlay.classList.remove("fade-out");
   menuOverlay.classList.add("fade-in")
+  menuOverlay.style.display = "flex";
 }
 
 // Start a game round
