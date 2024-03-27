@@ -36,12 +36,18 @@ document.addEventListener('contextmenu', event => {
   event.preventDefault();
 });
 
-//global event listener function
-function addGlobalEventListener(type, selector, callback) {
-  document.addEventListener(type, e => {
-    if (e.target.matches(selector)) callback(e)
-  })
+function globalEventListener( type, element, callback ) {
+  element.addEventListener( type, event => {
+    callback( event );
+  } )
 }
+
+//global event listener function
+// function addGlobalEventListener(type, selector, callback) {
+//   document.addEventListener(type, e => {
+//     if (e.currentTarget.matches(selector)) callback(e);
+//   })
+// }
 
 // Define game logic to check wires, progress game, end game, and choose a random dangerous wire
 let fixWires = () => {
@@ -125,19 +131,34 @@ let wrongWireGenerator = (wrongWire) => {
   }
 }
 
-//handles click events on wire compartments. Checks 
-addGlobalEventListener('click', '.wire-compartment', e => {
-  if (currentlyPlaying && isClicked(e.target)) {
-    if (e.target.src.toString().includes('red')) {
-      e.target.src = cutRedWirePath;
-    } else if (e.target.src.toString().includes('green')) {
-      e.target.src = cutGreenWirePath;
-    } else {
-      e.target.src = cutBlueWirePath;
-    }
-    cutWire(e.target);
-  };
-})
+//handles click events on wire compartments.
+document.querySelectorAll('.wire-compartment-container').forEach( (wire) => {
+  globalEventListener('click', wire, e => {
+    if (currentlyPlaying && isClicked(e.currentTarget.children[0])) {
+      if (e.currentTarget.children[0].src.toString().includes('red')) {
+        e.currentTarget.children[0].src = cutRedWirePath;
+      } else if (e.currentTarget.children[0].src.toString().includes('green')) {
+        e.currentTarget.children[0].src = cutGreenWirePath;
+      } else {
+        e.currentTarget.children[0].src = cutBlueWirePath;
+      }
+      cutWire(e.currentTarget.children[0]);
+    };
+  } );
+} );
+
+// globalEventListener('click', '.wire-compartment', e => {
+//   if (currentlyPlaying && isClicked(e.target)) {
+//     if (e.target.src.toString().includes('red')) {
+//       e.target.src = cutRedWirePath;
+//     } else if (e.target.src.toString().includes('green')) {
+//       e.target.src = cutGreenWirePath;
+//     } else {
+//       e.target.src = cutBlueWirePath;
+//     }
+//     cutWire(e.target);
+//   };
+// })
 
 let streakVisibility = () => {
   for (let streak of streaks) {
@@ -160,7 +181,7 @@ let dropBomb = () => {
 }
 
 //event listeners for clicking the buttons
-addGlobalEventListener('click', '.instructions-btn', e => {
+instructionsBtn.addEventListener('click', e => {
   if (menuOverlay.classList.contains("fade-out")) {
     showMenuOverlay();
   } else {
@@ -168,7 +189,7 @@ addGlobalEventListener('click', '.instructions-btn', e => {
   }
 })
 
-addGlobalEventListener('click', '#start', () => {
+globalEventListener('click', document.getElementById( 'start' ), () => {
   if (currentlyPlaying === false) {
     startRound();
   }
