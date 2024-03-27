@@ -272,7 +272,6 @@ button:focus {
 .wire-panel {
   display: flex;
   background-image: url(assets/images/wire_panel.svg);
-  z-index: 10;
   background-repeat: no-repeat;
   background-position: center;  
   background-size:auto;
@@ -280,19 +279,20 @@ button:focus {
   height: var(--wire-panel-height);
   justify-content:space-evenly;
   align-items: center;
+  gap: 0.5em;
+  padding: 3%;
   overflow: hidden;
   margin-right: var(--wire-panel-margin);
+  box-sizing: border-box;
 }
 
 .wire-compartment-container {
-  display: flex;
-  align-items: center;
-  height: fit-content;
-  width: var(--compartment-width);
+  flex-basis: 33%;
 }
 
 .wire-compartment {
   cursor: url('assets/images/cutters_icon.svg'), auto;
+  display: block;
 }
 
 @media only screen and (max-aspect-ratio: 1) {
