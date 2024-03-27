@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
   --fade-time: 300ms;
   --streak-color: rgba(211, 211, 211, 40%);
@@ -14,6 +21,8 @@
 
 body {
   min-height: 150vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#161616), to(#2f2f2f));
+  background-image: -o-linear-gradient(#161616, #2f2f2f);
   background-image: linear-gradient(#161616, #2f2f2f);
   margin: 0px;
   overflow: hidden;
@@ -37,25 +46,37 @@ button:focus {
   height: 40px;
   width: 40px;
   fill: var(--streak-color);
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
   transition: 300ms;
 }
 
 .instructions-svg:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .fade-out {
-  animation-name: fade-out;
-  animation-duration: var(--fade-time);
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: fade-out;
+          animation-name: fade-out;
+  -webkit-animation-duration: var(--fade-time);
+          animation-duration: var(--fade-time);
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .fade-in {
-  animation-name: fade-in;
-  animation-duration: var(--fade-time);
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: fade-in;
+          animation-name: fade-in;
+  -webkit-animation-duration: var(--fade-time);
+          animation-duration: var(--fade-time);
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .falling-streak {
@@ -64,35 +85,45 @@ button:focus {
   height: 45vh;
   width: 1vw;
   visibility: hidden;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(var(--streak-color)), to(transparent));
+  background-image: -o-linear-gradient(transparent, var(--streak-color), transparent);
   background-image: linear-gradient(transparent, var(--streak-color), transparent);
-  animation-name: bottom-to-top;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: bottom-to-top;
+          animation-name: bottom-to-top;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 .streak1 {
   margin-left: 8%;
-  animation-delay: 500ms;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 .streak2 {
   margin-left: 26%;
-  animation-delay: 0ms;
+  -webkit-animation-delay: 0ms;
+          animation-delay: 0ms;
 }
 
 .streak3 {
   margin-left: 35%;
-  animation-delay: 1500ms;
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
 }
 
 .streak4 {
   margin-left: 60%;
-  animation-delay: 900ms;
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
 }
 
 .streak5 {
   margin-left: 85%;
-  animation-delay: 1700ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .title-row {
@@ -103,7 +134,9 @@ button:focus {
 
 .instructions-title {
   display: inline;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   font-family: 'Work Sans';
   margin-top: 6vh;
   font-size: 18px;
@@ -111,15 +144,25 @@ button:focus {
 }
 
 .instructions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
   padding: 0 10vw;
 }
 
 .instruction-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .instructions-number {
@@ -140,10 +183,18 @@ button:focus {
 .menu-container {
   position: fixed;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-y: scroll;
   width: 100%;
   height: 100%;
@@ -161,9 +212,12 @@ button:focus {
 
 .start-btn {
   margin-inline: auto;
-  margin-block-start: 20px;
+  -webkit-margin-before: 20px;
+          margin-block-start: 20px;
   width: 120px;
   background-color: #00ffff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   padding: 18px;
   font-family: 'Work Sans';
@@ -197,16 +251,26 @@ button:focus {
 }
 
 .bomb-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
   position: relative ;
   background-repeat: no-repeat;
   background-position: center;
   height: 55vh;
   width: 50vw;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: auto;
 }
 
@@ -218,12 +282,16 @@ button:focus {
 }
 
 .flag-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 1vh;
   position: absolute;
   z-index: -50;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 20vh;
 }
 
@@ -235,30 +303,46 @@ button:focus {
 }
 
 .start-falling {
-  animation-name: start-falling;
-  animation-duration: 3000ms;
+  -webkit-animation-name: start-falling;
+          animation-name: start-falling;
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
 }
 
 .fly-off {
-  animation-name: fly-off;
-  animation-duration: 1.7s;
-  animation-fill-mode: forwards;
+  -webkit-animation-name: fly-off;
+          animation-name: fly-off;
+  -webkit-animation-duration: 1.7s;
+          animation-duration: 1.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .falling {
-  animation-name: continue-falling;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: continue-falling;
+          animation-name: continue-falling;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 
 .explode {
-  animation-name: explode;
-  animation-duration: 400ms;
-  animation-fill-mode: forwards;
-  transform-origin: left;
-  animation-timing-function: cubic-bezier(0.46, 0.07, 0.08, 2.21);
+  -webkit-animation-name: explode;
+          animation-name: explode;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  -webkit-animation-timing-function: cubic-bezier(0.46, 0.07, 0.08, 2.21);
+          animation-timing-function: cubic-bezier(0.46, 0.07, 0.08, 2.21);
   visibility: visible;
 }
 
@@ -270,6 +354,8 @@ button:focus {
 }
 
 .wire-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-image: url(assets/images/wire_panel.svg);
   background-repeat: no-repeat;
@@ -277,17 +363,23 @@ button:focus {
   background-size:auto;
   width: var(--wire-panel-width);
   height: var(--wire-panel-height);
-  justify-content:space-evenly;
-  align-items: center;
+  -webkit-box-pack:space-evenly;
+      -ms-flex-pack:space-evenly;
+          justify-content:space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.5em;
   padding: 3%;
   overflow: hidden;
   margin-right: var(--wire-panel-margin);
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .wire-compartment-container {
-  flex-basis: 33%;
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
 }
 
 .wire-compartment {
@@ -331,7 +423,9 @@ button:focus {
     height: 1vh;
     position: absolute;
     z-index: -50;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 28%;
     margin-left: 20%;
   }
@@ -354,9 +448,19 @@ button:focus {
 
 }
 
+@-webkit-keyframes fade-out {
+  0% {opacity: 100%;}
+  100% {opacity: 0;}  
+}
+
 @keyframes fade-out {
   0% {opacity: 100%;}
   100% {opacity: 0;}  
+}
+
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}  
 }
 
 @keyframes fade-in {
@@ -364,9 +468,19 @@ button:focus {
   100% {opacity: 100%;}  
 }
 
+@-webkit-keyframes bottom-to-top {
+  0% {-webkit-transform: translateY(150vh);transform: translateY(150vh);}
+  100% {-webkit-transform: translateY(-160vh);transform: translateY(-160vh);}
+}
+
 @keyframes bottom-to-top {
-  0% {transform: translateY(150vh);}
-  100% {transform: translateY(-160vh);}
+  0% {-webkit-transform: translateY(150vh);transform: translateY(150vh);}
+  100% {-webkit-transform: translateY(-160vh);transform: translateY(-160vh);}
+}
+
+@-webkit-keyframes start-falling {
+  0% {rotate: 0deg;}
+  100% {rotate: var(--bomb-rotation-start);}
 }
 
 @keyframes start-falling {
@@ -374,15 +488,31 @@ button:focus {
   100% {rotate: var(--bomb-rotation-start);}
 }
 
+@-webkit-keyframes fly-off {
+  0% {}
+  99% {-webkit-transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y));transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y)); opacity: 0;}
+  100% {opacity: 0;}
+}
+
 @keyframes fly-off {
   0% {}
-  99% {transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y)); opacity: 0;}
+  99% {-webkit-transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y));transform: rotateY(-480deg) rotateZ(-60deg) translate(var(--bomb-trans-x), var(--bomb-trans-y)); opacity: 0;}
   100% {opacity: 0;}
+}
+
+@-webkit-keyframes continue-falling {
+  0% {rotate: var(--bomb-rotation-start);}
+  100% {rotate: var(--bomb-rotation-finish);}
 }
 
 @keyframes continue-falling {
   0% {rotate: var(--bomb-rotation-start);}
   100% {rotate: var(--bomb-rotation-finish);}
+}
+
+@-webkit-keyframes explode {
+  0% {rotate: 0deg;}
+  100% {rotate: -110deg;}
 }
 
 @keyframes explode {
