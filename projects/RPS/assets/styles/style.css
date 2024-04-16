@@ -1,0 +1,261 @@
+:root {
+    --accent-color: #2a324b;
+    --accent-color-2: #5C91A0;
+    --accent-color-3: #F6F6F9;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --light-font: white;
+    --logo-height: 3em;
+    --small-padding: 0.5em;
+    --nav-height: calc(var(--logo-height) + (2 * var(--small-padding)));
+    --landing-height: calc(100vh - var(--nav-height));
+    --font-calc: clamp(16px, calc(0.2em + 1vw), 50px);
+}
+
+html {
+    font-family: "lato", sans-serif;
+    font-size: var(--font-calc);
+}
+
+h1 {
+    font-size: calc(3.8 * var(--font-calc));
+}
+
+section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.button {
+    border: solid;
+    border-width: 0.2em;
+    border-radius: .5em;
+    border-color: var(--light-font);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5em 2em;
+    margin-top: 2em;
+    text-decoration: none;
+    text-align: center;
+    color: var(--light-font);
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: var(--light-font);
+    color: var(--accent-color);
+}
+
+.dark-btn {
+    background-color: unset;
+    border-color: var(--accent-color-2);
+    color: var(--accent-color-2);
+}
+
+.dark-btn:hover {
+    background-color: var(--accent-color-2);
+    color: var(--light-font);
+}
+
+header {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.content-wrapper {
+    padding-inline: 2rem;
+    max-width: 65em;
+    margin: auto;
+}
+
+#logo-svg {
+    height: 4em;
+    width: auto;
+}
+
+#navbar {
+    width: 100%;
+    background-color: var(--accent-color);
+    box-shadow: 0 3px 2px var(--shadow-color);
+    padding-block: 0.5em;
+}
+
+nav .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-cluster {
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: 0;
+}
+
+.nav-cluster li {
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    color: var(--light-font);
+    transition: all 0.1s ease-in;
+    height: var(--nav-height);
+    text-align: center;
+    vertical-align: center;
+}
+
+.nav-cluster a :hover {
+    transform: scale(1.05);
+}
+
+.anchor-btn {
+    text-decoration: none;
+}
+
+.landing-background-wrapper {
+    position: absolute;
+    z-index: -100;
+    height: var(--landing-height);
+    width: 100%;
+    overflow: hidden;
+}
+
+#landing {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: var(--landing-height);
+    padding: 0;
+    background-image: url('../images/car_drifting_dust.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: var(--nav-height);
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 35em;
+    color: white;
+    padding-inline: 2rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.about p {
+    width: 100%;
+    max-width: 45em;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    background-color: var(--accent-color-3);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    /* min-width: 15em; */
+    padding: 1.5em;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30em;
+}
+
+label {
+    align-self: flex-start;
+    margin-top: 1.5em;
+}
+
+input {
+    max-width: 30em;
+    width: 100%;
+    height: 2em;
+    background-color: var(--accent-color-3);
+    padding-inline: 0.75em;
+    box-sizing: border-box;
+}
+
+textarea {
+    max-width: 30em;
+    width: 100%;
+    background-color: var(--accent-color-3);
+}
+
+.submit {
+    max-width: 10em;
+    min-height: 2.5em;
+}
+
+.radiused {
+    border-radius: 0.5em;
+    border-width: 1px;
+}
+
+.invalid {
+    border-color: red;
+    box-shadow: 0px 0px 5px 1px rgba(255, 0, 0, 0.25);
+}
+
+.message {
+    margin-top: 1em;
+}
+
+textarea {
+    padding: 0.75em;
+    box-sizing: border-box;
+}
+
+footer {
+    display: flex;
+    padding-top: 2em;
+    padding-bottom: var(--small-padding);
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--light-font);
+}
+
+footer p {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.visible {
+    display: flex;
+}
